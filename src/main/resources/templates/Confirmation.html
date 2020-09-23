@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<body>
+	<div layout:fragment="content" class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">Confirmation</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label>ID:</label> <input type="text" name="id"
+						th:value="${produit.id}" readonly /> <label>Designation:</label> <input
+						type="text" name="designation" th:value="${produit.designation}"
+						readonly /> <label>Prix:</label> <input type="text" name="prix"
+						th:value="${produit.prix}" readonly /> <label>Quantité:</label> <input
+						type="text" name="quantite" th:value="${produit.quantite}"
+						readonly />
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

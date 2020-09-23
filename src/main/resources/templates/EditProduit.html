@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<body>
+	<div layout:fragment="content" class="spacer col-md-6 col-xs-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">Saisie d'un produit</div>
+			<div class="panel-body">
+				<form th:action="@{/admin/save}" method="post">
+					<div class="form-group">
+						<label class="contril-label">ID</label> <input
+							class="form-control" type="text" name="id"
+							th:value="${produit.id}" /> <span class="red"
+							th:errors="${produit.id}"></span>
+
+					</div>
+					<div class="form-group">
+						<label class="contril-label">Désignation</label> <input
+							class="form-control" type="text" name="designation"
+							th:value="${produit.designation}" /> <span class="red"
+							th:errors="${produit.designation}"></span>
+
+					</div>
+					<div class="form-group">
+						<label class="contril-label">Prix</label> <input
+							class="form-control" type="text" name="prix"
+							th:value="${produit.prix}" /> <span class="red"
+							th:errors="${produit.prix}"></span>
+
+					</div>
+					<div class="form-group">
+						<label class="contril-label">Quantité</label> <input
+							class="form-control" type="text" name="quantite"
+							th:value="${produit.quantite}" /> <span class="red"
+							th:errors="${produit.quantite}"></span>
+
+					</div>
+					<div>
+						<button type="submit" class="btn btn-primary">Save</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
