@@ -1,0 +1,17 @@
+create table users (
+    username varchar(30) not null primary key,
+    password varchar(250),
+    active boolean
+);
+
+create table roles(
+    role varchar(30) not null primary key
+);
+
+create table users_roles(
+    username varchar(30) not null,
+    role varchar(30) not null,
+    primary key (username, role),
+    constraint fk_role foreign key (role) references roles(role),
+    constraint fk_username foreign key (username) references users(username)
+);
